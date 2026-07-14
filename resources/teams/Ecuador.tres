@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://cmmj4oc2pl440"]
+
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://TeamData.gd" id="1_1inlt"]
+
+[resource]
+script = ExtResource("1_1inlt")
+name = "Ecuador"
+strength = 84
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"
