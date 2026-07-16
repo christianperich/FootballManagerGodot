@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://brnde8v7qob5y"]
+
+[sub_resource type="FontFile" id="FontFile_h2yge"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Headers" type="HBoxContainer" unique_id=547534173]
+custom_minimum_size = Vector2(0, 30)
+
+[node name="PositionLabel" type="RichTextLabel" parent="." unique_id=1652470819]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "Pos"
+
+[node name="TeamNameLabel" type="RichTextLabel" parent="." unique_id=84846626]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "Equipo"
+
+[node name="PositionLabel3" type="RichTextLabel" parent="." unique_id=1598324390]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "PJ"
+horizontal_alignment = 1
+
+[node name="PositionLabel4" type="RichTextLabel" parent="." unique_id=846411292]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "PG"
+horizontal_alignment = 1
+
+[node name="PositionLabel5" type="RichTextLabel" parent="." unique_id=490495936]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "PE"
+horizontal_alignment = 1
+
+[node name="PositionLabel6" type="RichTextLabel" parent="." unique_id=2139116031]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "PP"
+horizontal_alignment = 1
+
+[node name="PositionLabel7" type="RichTextLabel" parent="." unique_id=1936884437]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "GF"
+horizontal_alignment = 1
+
+[node name="PositionLabel8" type="RichTextLabel" parent="." unique_id=1735592520]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "GC"
+horizontal_alignment = 1
+
+[node name="PositionLabel9" type="RichTextLabel" parent="." unique_id=1213982103]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "DG"
+horizontal_alignment = 1
+
+[node name="PositionLabel10" type="RichTextLabel" parent="." unique_id=1189507367]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/bold_font = SubResource("FontFile_h2yge")
+theme_override_font_sizes/bold_font_size = 25
+text = "Pts"
+horizontal_alignment = 1

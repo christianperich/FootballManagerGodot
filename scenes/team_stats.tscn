@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cqbc4lb12uov6"]
+
+[node name="TeamStats" type="HBoxContainer" unique_id=117746334]
+custom_minimum_size = Vector2(0, 30)
+
+[node name="PositionLabel" type="RichTextLabel" parent="." unique_id=1266384306]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "1."
+
+[node name="TeamNameLabel" type="RichTextLabel" parent="." unique_id=495692856]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Países Bajos"
+
+[node name="TeamPJ" type="RichTextLabel" parent="." unique_id=1288567751]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TeamPG" type="RichTextLabel" parent="." unique_id=944035277]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TeamPE" type="RichTextLabel" parent="." unique_id=955075977]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TeamPP" type="RichTextLabel" parent="." unique_id=1500819505]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TeamGF" type="RichTextLabel" parent="." unique_id=1520779938]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TeamGC" type="RichTextLabel" parent="." unique_id=231754135]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TeamDG" type="RichTextLabel" parent="." unique_id=88490363]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TeamPoints" type="RichTextLabel" parent="." unique_id=1349907705]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1

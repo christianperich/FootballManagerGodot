@@ -13,7 +13,10 @@ config_version=5
 config/name="Football_Manager"
 run/main_scene="uid://cd6yl301ykpfo"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://c3no3jba4ccpg"
 
 [physics]
 

@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cd6yl301ykpfo"]
+
+[ext_resource type="Script" uid="uid://cwfj0p7xdyie1" path="res://scripts/match_simulation.gd" id="1_tefeu"]
+[ext_resource type="Script" uid="uid://gwi8sunv7iij" path="res://scripts/ui/fixtures_ui.gd" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b4w8p25kdjrvh" path="res://scenes/fixture_container.tscn" id="3_tipki"]
+[ext_resource type="Script" uid="uid://un8tjrbqvbe0" path="res://scripts/ui/team_stats_ui.gd" id="4_85g3d"]
+[ext_resource type="PackedScene" uid="uid://brnde8v7qob5y" path="res://scenes/group_headers.tscn" id="5_choun"]
+[ext_resource type="PackedScene" uid="uid://cqbc4lb12uov6" path="res://scenes/team_stats.tscn" id="6_ya4ey"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.19607843, 0.09019608, 0.43529412, 1)
+
+[node name="Main" type="Control" unique_id=1236731957]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Components" type="Node" parent="." unique_id=1216300906]
+
+[node name="MatchSimulation" type="Node" parent="Components" unique_id=445104931]
+unique_name_in_owner = true
+script = ExtResource("1_tefeu")
+
+[node name="FixturesUI" type="VBoxContainer" parent="." unique_id=1175428634]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -492.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_o6xl0")
+
+[node name="FixtureHeader" type="HBoxContainer" parent="FixturesUI" unique_id=1782201428]
+layout_mode = 2
+alignment = 1
+
+[node name="Retroceder" type="Button" parent="FixturesUI/FixtureHeader" unique_id=1978804207]
+layout_mode = 2
+text = "<"
+
+[node name="JornadaTitle" type="RichTextLabel" parent="FixturesUI/FixtureHeader" unique_id=880346681]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Fixtures"
+horizontal_alignment = 1
+
+[node name="Avanzar" type="Button" parent="FixturesUI/FixtureHeader" unique_id=1421496053]
+layout_mode = 2
+text = ">"
+
+[node name="FixtureContainer" parent="FixturesUI" unique_id=754402351 instance=ExtResource("3_tipki")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GroupStatsUI" type="VBoxContainer" parent="." unique_id=3572232]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 67.0
+offset_right = 1126.0
+offset_bottom = 326.0
+script = ExtResource("4_85g3d")
+
+[node name="GroupNameLabel" type="RichTextLabel" parent="GroupStatsUI" unique_id=1767261143]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+text = "Grupo 1"
+
+[node name="Headers" parent="GroupStatsUI" unique_id=547534173 instance=ExtResource("5_choun")]
+layout_mode = 2
+
+[node name="TeamStats" parent="GroupStatsUI" unique_id=117746334 instance=ExtResource("6_ya4ey")]
+layout_mode = 2
+
+[node name="Continuar" type="Button" parent="." unique_id=13477819]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 0
+offset_left = 974.0
+offset_top = 571.0
+offset_right = 1060.0
+offset_bottom = 602.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+text = "Continuar"
+
+[connection signal="pressed" from="Continuar" to="FixturesUI" method="_on_continuar_pressed"]

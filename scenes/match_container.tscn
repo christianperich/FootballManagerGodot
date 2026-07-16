@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c5f2ume4rkgda"]
+
+[node name="MatchContainer" type="Control" unique_id=1255638393]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1905288439]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="GroupBtn" type="Button" parent="HBoxContainer" unique_id=1933293497]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+text = "Grupo 1"
+
+[node name="Team1" type="Button" parent="HBoxContainer" unique_id=1647386551]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Equipo 1"
+
+[node name="Result" type="Button" parent="HBoxContainer" unique_id=1438265518]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "0 - 0"
+
+[node name="Team2" type="Button" parent="HBoxContainer" unique_id=710676920]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Equipo 2"

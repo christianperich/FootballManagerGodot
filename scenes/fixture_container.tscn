@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b4w8p25kdjrvh"]
+
+[ext_resource type="PackedScene" uid="uid://c5f2ume4rkgda" path="res://scenes/match_container.tscn" id="1_ced3i"]
+
+[node name="FixtureContainer" type="VBoxContainer" unique_id=101775935]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 84.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="MatchContainer" parent="." unique_id=1255638393 instance=ExtResource("1_ced3i")]
+layout_mode = 2
+
+[node name="MatchContainer2" parent="." unique_id=142619552 instance=ExtResource("1_ced3i")]
+layout_mode = 2
