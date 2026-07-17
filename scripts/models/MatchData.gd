@@ -1,11 +1,14 @@
+class_name MatchData
 extends Resource
 
-class_name MatchData
+var home_team: TeamData
+var away_team: TeamData
 
-var team1 : TeamData
-var team2 : TeamData
-var goals1 : int
-var goals2 : int
-var is_played : bool = false
-var match_number : int
-var group_id : int
+var home_goals := 0
+var away_goals := 0
+
+var played := false
+
+var matchday := 0
+
+var result: MatchContext

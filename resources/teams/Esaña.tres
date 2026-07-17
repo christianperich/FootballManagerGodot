@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://c2e1jivxuoheh"]
-
-[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://scripts/models/TeamData.gd" id="1_6slax"]
-
-[resource]
-script = ExtResource("1_6slax")
-name = "España"
-strength = 97
-metadata/_custom_type_script = "uid://dvrsns4lv80w4"

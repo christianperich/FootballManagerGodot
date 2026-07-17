@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://decux0xqy6hio"]
 
-[ext_resource type="Script" uid="uid://cp3sy4uj1aorv" path="res://scenes/tests/test_match.gd" id="1_gngs0"]
+[ext_resource type="Script" uid="uid://ci3rxr2ljvpyo" path="res://scenes/tests/fixture_test.gd" id="1_kfhwr"]
 
 [node name="TestMatch" type="Node" unique_id=2053111146]
-
-[node name="Possesion" type="Node" parent="." unique_id=527672457]
-script = ExtResource("1_gngs0")
+script = ExtResource("1_kfhwr")

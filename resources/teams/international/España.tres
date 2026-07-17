@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://c2e1jivxuoheh"]
+
+[ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_ae3jb"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_6ofte"]
+
+[resource]
+script = ExtResource("2_6ofte")
+name = "España"
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"
