@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://decux0xqy6hio"]
+
+[ext_resource type="Script" uid="uid://cp3sy4uj1aorv" path="res://scenes/tests/test_match.gd" id="1_gngs0"]
+
+[node name="TestMatch" type="Node" unique_id=2053111146]
+
+[node name="Possesion" type="Node" parent="." unique_id=527672457]
+script = ExtResource("1_gngs0")

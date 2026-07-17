@@ -84,7 +84,7 @@ func create_fixture() -> void:
 		var group_teams: Array[TeamStats] = groups[group_id]
 		_generate_round_robin_fixture(group_teams, group_id)
 		
-	print("Total de partidos creados en el torneo: " + str(all_matches.size()))
+	#print("Total de partidos creados en el torneo: " + str(all_matches.size()))
 
 
 func _generate_round_robin_fixture(group_teams: Array[TeamStats], group_id: int) -> void:
@@ -129,7 +129,7 @@ func setup_match(team1: TeamData, team2: TeamData, date: int, group_id: int) -> 
 	
 	all_matches.append(partido)
 	
-	print("Grupo %d | Jornada %d: %s vs %s" % [group_id + 1, date, team1.name, team2.name])
+	#print("Grupo %d | Jornada %d: %s vs %s" % [group_id + 1, date, team1.name, team2.name])
 
 	
 func avanzar_jornada():
