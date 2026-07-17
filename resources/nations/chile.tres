@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NationalityData" format=3 uid="uid://dx885cdb2i45v"]
+
+[ext_resource type="Script" uid="uid://d3wranpdb10vd" path="res://scripts/models/NationalityData.gd" id="1_71fqf"]
+
+[resource]
+script = ExtResource("1_71fqf")
+name = "Chile"
+fifa_code = "CHI"
+language = "Español"
+reputation = 75
+youth_quality = 70
+economic_power = 70
+metadata/_custom_type_script = "uid://d3wranpdb10vd"

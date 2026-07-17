@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://bc8etn5nljg2v"]
+
+[ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_20h18"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_c05m0"]
+
+[resource]
+script = ExtResource("2_c05m0")
+name = "Everton"
+short_name = "Everton"
+attack = 62.0
+midfield = 62.0
+defense = 62.0
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"

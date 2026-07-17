@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://doxuaykfosjf8"]
+
+[ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_kejdg"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_m4bgv"]
+
+[resource]
+script = ExtResource("2_m4bgv")
+name = "Palestino"
+short_name = "Palestino"
+attack = 66.0
+midfield = 66.0
+defense = 71.0
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"

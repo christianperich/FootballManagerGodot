@@ -1,11 +1,53 @@
 extends Node
 
-var current_competition: CompetitionData
+var current_season: SeasonData
+const CHILE_PRIMERA_A = preload("uid://c67dyr45cjysl")
+
+func _ready():
+	new_game()
 
 func new_game():
-	current_competition = CompetitionFactory.create()
+	var competition = CHILE_PRIMERA_A.duplicate(true)
 
-func next_matchday():
-	var simulator = LeagueSimulator.new()
+	var season = SeasonData.new()
 
-	simulator.simulate_matchday(current_competition)
+	season.start(competition)
+
+	current_season = season
+
+func play_current_matchday():
+	var matchday = current_season.get_current_matchday()
+	if matchday == null:
+		print("No hay más partidos por jugar")
+		return
+		
+	print("--------------------------------")
+	print("Resultados de la jornada ", matchday.number)
+	print("--------------------------------")
+
+	var simulator := MatchSimulator.new()
+
+	for game in matchday.matches:
+		var result = simulator.simulate(
+			game.home_team,
+			game.away_team
+		)
+		
+		# GUARDAR RESULTADO
+		game.home_goals = result.home_goals
+		game.away_goals = result.away_goals
+		game.played = true
+
+		print(
+			game.home_team.name,
+			" ",
+			result.home_goals,
+			"-",
+			result.away_goals,
+			" ",
+			game.away_team.name
+		)
+		
+		current_season.league_table.update(game)
+	
+	current_season.next_matchday()

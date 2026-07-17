@@ -2,10 +2,11 @@ class_name FixtureGenerator
 extends RefCounted
 
 
-func generate(competition: CompetitionData) -> void:
+func create_fixtures(competition: CompetitionData) -> void:
 	competition.matchdays.clear()
 
 	var teams = competition.teams.duplicate()
+	teams.shuffle()
 
 	# Si la cantidad es impar agregamos un descanso (BYE)
 	if teams.size() % 2 != 0:

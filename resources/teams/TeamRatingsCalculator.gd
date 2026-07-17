@@ -2,6 +2,9 @@ class_name TeamRatingCalculator
 extends RefCounted
 
 func calculate(team: TeamData) -> TeamRatings:
+	if team.players.size() == 0:
+			return calculate_from_team(team)
+
 	var ratings := TeamRatings.new()
 
 	ratings.attack = calculate_attack(team)
@@ -66,3 +69,18 @@ func calculate_defense(team: TeamData) -> float:
 		return 0
 
 	return total / count
+
+func calculate_from_team(team: TeamData) -> TeamRatings:
+	var ratings := TeamRatings.new()
+
+	ratings.attack = team.attack
+	ratings.midfield = team.midfield
+	ratings.defense = team.defense
+
+	ratings.overall = (
+		ratings.attack +
+		ratings.midfield +
+		ratings.defense
+	) / 3.0
+
+	return ratings

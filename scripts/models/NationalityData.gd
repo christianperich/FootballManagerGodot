@@ -15,11 +15,11 @@ extends Resource
 
 @export var confederation: Confederation
 
-@export var reputation: int
+@export_range(0, 100) var reputation: int
 
-@export var youth_quality: int
+@export_range(0, 100) var youth_quality: int
 
-@export var economic_power: int
+@export_range(0, 100) var economic_power: int
 
 @export var flag: Texture2D
 

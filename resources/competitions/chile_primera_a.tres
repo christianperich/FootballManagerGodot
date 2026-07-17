@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CompetitionData" format=3 uid="uid://c67dyr45cjysl"]
+
+[ext_resource type="Script" uid="uid://dvn7ymk53qp3p" path="res://scripts/models/CompetitionData.gd" id="1_660jo"]
+[ext_resource type="Resource" uid="uid://dx885cdb2i45v" path="res://resources/nations/chile.tres" id="1_st3md"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_6tg62"]
+[ext_resource type="Resource" uid="uid://c4ap1k34lrv1f" path="res://resources/teams/chile/coquimbo.tres" id="4_ykahd"]
+[ext_resource type="Resource" uid="uid://doot771mxgjov" path="res://resources/teams/chile/colo_colo.tres" id="5_jft0m"]
+[ext_resource type="Resource" uid="uid://cqgpt84wk3c2p" path="res://resources/teams/chile/o_higgins.tres" id="6_pdn6y"]
+[ext_resource type="Resource" uid="uid://doxuaykfosjf8" path="res://resources/teams/chile/palestino.tres" id="7_6qn5o"]
+[ext_resource type="Resource" uid="uid://dlhfi5efm3rqu" path="res://resources/teams/chile/u_catolica.tres" id="8_tdaax"]
+[ext_resource type="Resource" uid="uid://w6py32beh8t6" path="res://resources/teams/chile/u_de_chile.tres" id="9_31brf"]
+[ext_resource type="Resource" uid="uid://c6k8f07rpsu4v" path="res://resources/teams/chile/audax.tres" id="10_mmtj0"]
+[ext_resource type="Resource" uid="uid://bc8etn5nljg2v" path="res://resources/teams/chile/everton.tres" id="11_lalfr"]
+[ext_resource type="Resource" uid="uid://dco2lm6cfkiwo" path="res://resources/teams/chile/limache.tres" id="12_ivj42"]
+[ext_resource type="Resource" uid="uid://c0cp06u27p5ea" path="res://resources/teams/chile/cobresal.tres" id="13_wc1jx"]
+[ext_resource type="Resource" uid="uid://cabcbjb5cqy6l" path="res://resources/teams/chile/ñublense.tres" id="14_q0jfr"]
+[ext_resource type="Resource" uid="uid://7geg76iw4ldk" path="res://resources/teams/chile/la_calera.tres" id="15_mph1e"]
+[ext_resource type="Resource" uid="uid://dt10a14apfles" path="res://resources/teams/chile/la_serena.tres" id="16_v7kt2"]
+[ext_resource type="Resource" uid="uid://dpn5cdkhrf8i5" path="res://resources/teams/chile/concepcion.tres" id="17_0kilh"]
+[ext_resource type="Resource" uid="uid://bst4p4rer20gd" path="res://resources/teams/chile/huachipato.tres" id="18_fqgw1"]
+[ext_resource type="Resource" uid="uid://uipbe8n73h8e" path="res://resources/teams/chile/u_de_conce.tres" id="19_ihygl"]
+
+[resource]
+script = ExtResource("1_660jo")
+name = "Primera A"
+country = ExtResource("1_st3md")
+divisions = 1
+teams = Array[ExtResource("2_6tg62")]([ExtResource("9_31brf"), ExtResource("8_tdaax"), ExtResource("7_6qn5o"), ExtResource("6_pdn6y"), ExtResource("5_jft0m"), ExtResource("4_ykahd"), ExtResource("10_mmtj0"), ExtResource("11_lalfr"), ExtResource("12_ivj42"), ExtResource("13_wc1jx"), ExtResource("14_q0jfr"), ExtResource("15_mph1e"), ExtResource("16_v7kt2"), ExtResource("17_0kilh"), ExtResource("18_fqgw1"), ExtResource("19_ihygl")])
+metadata/_custom_type_script = "uid://dvn7ymk53qp3p"

@@ -27,7 +27,7 @@ enum Foot {
 @export var last_name: String
 @export var nickname: String
 @export var age: int = 20
-@export var nationality: String = ""
+@export var nationality: NationalityData
 @export var primary_position: Position
 @export var secondary_positions: Array[Position] = []
 @export var preferred_foot := Foot.RIGHT
@@ -123,3 +123,18 @@ func get_rating_for_position(target_position: Position) -> float:
 		_:
 			push_error("Posición no soportada en PlayerData.get_rating_for_position()")
 			return 50.0
+
+static func position_to_string(position: Position) -> String:
+	match position:
+		Position.GK: return "GK"
+		Position.LB: return "LB"
+		Position.CB: return "CB"
+		Position.RB: return "RB"
+		Position.CDM: return "CDM"
+		Position.CM: return "CM"
+		Position.CAM: return "CAM"
+		Position.LW: return "LW"
+		Position.RW: return "RW"
+		Position.ST: return "ST"
+
+	return "Unknown"

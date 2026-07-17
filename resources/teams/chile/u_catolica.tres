@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://dlhfi5efm3rqu"]
+
+[ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_uxt1m"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_n5j6p"]
+
+[resource]
+script = ExtResource("2_n5j6p")
+name = "Universidad Católica"
+short_name = "U. Católica"
+attack = 75.0
+midfield = 70.0
+defense = 72.0
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"

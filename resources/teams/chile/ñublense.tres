@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://cabcbjb5cqy6l"]
+
+[ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_kbpon"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_m5to5"]
+
+[resource]
+script = ExtResource("2_m5to5")
+name = "Ñublense"
+short_name = "Ñublense"
+attack = 60.0
+midfield = 60.0
+defense = 63.0
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"

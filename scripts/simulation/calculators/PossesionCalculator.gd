@@ -36,8 +36,8 @@ func calculate_power(team: TeamData, is_home: bool) -> float:
 	)
 
 
-	if is_home:
-		power *= team.home_advantage_multiplier
+	"""if is_home:
+		power *= team.home_advantage_multiplier"""
 
 
 	return power

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://w6py32beh8t6"]
+
+[ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_dp6mq"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_htt2h"]
+
+[resource]
+script = ExtResource("2_htt2h")
+name = "Universidad de Chile"
+short_name = "U. de Chile"
+attack = 75.0
+midfield = 74.0
+defense = 71.0
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"

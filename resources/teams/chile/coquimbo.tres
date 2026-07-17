@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://c4ap1k34lrv1f"]
+
+[ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_82uch"]
+[ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_cno64"]
+
+[resource]
+script = ExtResource("2_cno64")
+name = "Coquimbo Unido"
+short_name = "Coquimbo"
+attack = 65.0
+midfield = 65.0
+defense = 71.0
+metadata/_custom_type_script = "uid://dvrsns4lv80w4"
