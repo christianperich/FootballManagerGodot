@@ -11,9 +11,6 @@ var away_team: TeamData
 var home_ratings: TeamRatings
 var away_ratings: TeamRatings
 
-#=========================================
-# Tiempo
-#=========================================
 
 var minute: int = 0
 
@@ -62,13 +59,14 @@ func initialize(home: TeamData, away: TeamData) -> void:
 func add_event(event: MatchEvent) -> void:
 	events.append(event)
 
-#=========================================
+"""#=========================================
 # Utilidades
 #=========================================
 
 func add_goal(team: TeamData) -> void:
 	if team == home_team:
 		home_goals += 1
+
 	else:
 		away_goals += 1
 
@@ -98,4 +96,4 @@ func add_attack(team: TeamData) -> void:
 	if team == home_team:
 		home_attacks += 1
 	else:
-		away_attacks += 1
+		away_attacks += 1"""

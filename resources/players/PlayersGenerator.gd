@@ -1,27 +1,27 @@
 class_name PlayersGenerator
-extends Node
+extends RefCounted
 
-const team_data = preload("res://resources/teams/chile/audax.tres")
+"""const AUDAX = preload("uid://c6k8f07rpsu4v")
 
-func _ready():
-	generate_squad(TeamData.new())
+func _ready() -> void:
+	generate_squad(AUDAX)"""
 
 func generate_squad(team: TeamData):
 	var strenght = (team.attack + team.midfield + team.defense) / 3
 	for i in range(2):
-		generate_player(PlayerData.Position.GK, strenght)
-		generate_player(PlayerData.Position.LB, strenght)
-		generate_player(PlayerData.Position.CB, strenght)
-		generate_player(PlayerData.Position.RB, strenght)
-		generate_player(PlayerData.Position.CDM, strenght)
-		generate_player(PlayerData.Position.CM, strenght)
-		generate_player(PlayerData.Position.CAM, strenght)
-		generate_player(PlayerData.Position.LW, strenght)
-		generate_player(PlayerData.Position.RW, strenght)
-		generate_player(PlayerData.Position.ST, strenght)
+		generate_player(PlayerData.Position.GK, strenght, team)
+		generate_player(PlayerData.Position.LB, strenght, team)
+		generate_player(PlayerData.Position.CB, strenght, team)
+		generate_player(PlayerData.Position.CB, strenght, team)
+		generate_player(PlayerData.Position.RB, strenght, team)
+		generate_player(PlayerData.Position.CDM, strenght, team)
+		generate_player(PlayerData.Position.CM, strenght, team)
+		generate_player(PlayerData.Position.CAM, strenght, team)
+		generate_player(PlayerData.Position.LW, strenght, team)
+		generate_player(PlayerData.Position.RW, strenght, team)
+		generate_player(PlayerData.Position.ST, strenght, team)
 		
-
-func generate_player(position: PlayerData.Position, strenght: int):
+func generate_player(position: PlayerData.Position, strenght: int, team:TeamData):
 	var player := PlayerData.new()
 	player.first_name = get_fisrt_name()
 	player.last_name = get_last_name()
@@ -35,6 +35,12 @@ func generate_player(position: PlayerData.Position, strenght: int):
 	player.physical = strenght + randi_range(-10, 10)
 	player.goalkeeping = strenght + randi_range(-10, 10)
 
+	#print_player(player)
+
+	team.players.append(player)
+	
+
+func print_player(player : PlayerData):
 	print("------------------")
 	print("Name: %s %s" % [player.first_name, player.last_name])
 	print("Age: %d" % player.age)
@@ -46,8 +52,6 @@ func generate_player(position: PlayerData.Position, strenght: int):
 	print("Defending: %d" % player.defending)
 	print("Physical: %d" % player.physical)
 	print("Goalkeeping: %d" % player.goalkeeping)
-
-	team_data.players.append(player)
 
 func get_fisrt_name() -> String:
 	var first_names = [

@@ -7,7 +7,9 @@ func _ready():
 	new_game()
 
 func new_game():
+	#Iniciar la competición y crear los jugadores de cadaequipo
 	var competition = CHILE_PRIMERA_A.duplicate(true)
+	create_players(competition)
 
 	var season = SeasonData.new()
 
@@ -47,7 +49,16 @@ func play_current_matchday():
 			" ",
 			game.away_team.name
 		)
+		print("--------------------")
 		
 		current_season.league_table.update(game)
 	
 	current_season.next_matchday()
+
+func create_players(competition : CompetitionData):
+	for team:TeamData in competition.teams:
+		var generator = PlayersGenerator.new()
+		print("Creando los jugadores de " + team.name)
+		print("----------------------")
+		generator.generate_squad(team)
+	

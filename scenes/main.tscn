@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cd6yl301ykpfo"]
 
 [ext_resource type="Script" uid="uid://crklg4tl4tvhw" path="res://scenes/main.gd" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://ia01jyln8qv0" path="res://resources/players/PlayersGenerator.gd" id="2_0wfyh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
 bg_color = Color(0.19607843, 0.09019608, 0.43529412, 1)
@@ -38,6 +37,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
 text = "Continuar"
 
 [node name="Node" type="Node" parent="." unique_id=563643273]
-script = ExtResource("2_0wfyh")
 
 [connection signal="pressed" from="Panel/ContinueButton" to="." method="_on_continue_button_pressed"]

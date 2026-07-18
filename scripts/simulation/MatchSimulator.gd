@@ -85,10 +85,16 @@ func simulate_minute(context: MatchContext):
 		goal_event.shot = shot
 
 
-		context.events.append(goal_event)
+		context.events.append(goal_event)	
 
 
 		if attacking == context.home_team:
 			context.home_goals += 1
+			var player : PlayerData = context.home_team.players.pick_random()
+			print("%s' Gol de %s %s para %s" % [str(context.minute), player.first_name,player.last_name, context.home_team.name])
+		
 		else:
 			context.away_goals += 1
+			var player : PlayerData = context.away_team.players.pick_random()
+			print("%s' Gol de %s %s para %s" % [str(context.minute), player.first_name,player.last_name, context.away_team.name])
+		

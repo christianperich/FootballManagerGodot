@@ -24,10 +24,8 @@ func calculate_attack(team: TeamData) -> float:
 	var count := 0
 
 	for player in team.players:
-		if player.position == PlayerData.Position.ST \
-		or player.position == PlayerData.Position.LW \
-		or player.position == PlayerData.Position.RW:
-			total += player.get_rating_for_position(player.position)
+		if player.primary_position == PlayerData.Position.ST or player.primary_position == PlayerData.Position.LW or player.primary_position == PlayerData.Position.RW:
+			total += player.get_rating_for_position(player.primary_position)
 			count += 1
 
 	if count == 0:
@@ -40,11 +38,11 @@ func calculate_midfield(team: TeamData) -> float:
 	var count := 0
 
 	for player in team.players:
-		match player.position:
+		match player.primary_position:
 			PlayerData.Position.CDM, \
 			PlayerData.Position.CM, \
 			PlayerData.Position.CAM:
-				total += player.get_rating_for_position(player.position)
+				total += player.get_rating_for_position(player.primary_position)
 				count += 1
 
 	if count == 0:
@@ -57,12 +55,12 @@ func calculate_defense(team: TeamData) -> float:
 	var count := 0
 
 	for player in team.players:
-		match player.position:
+		match player.primary_position:
 			PlayerData.Position.GK, \
 			PlayerData.Position.CB, \
 			PlayerData.Position.LB, \
 			PlayerData.Position.RB:
-				total += player.get_rating_for_position(player.position)
+				total += player.get_rating_for_position(player.primary_position)
 				count += 1
 
 	if count == 0:
