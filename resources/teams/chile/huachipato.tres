@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://bst4p4rer20gd"]
 
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_oidkn"]
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_r1tyg"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_r1tyg"]
 
 [resource]
 script = ExtResource("2_r1tyg")
 name = "Huachipato"
 short_name = "Huachipato"
+abreviation = "HUA"
 attack = 68.0
 midfield = 66.0
 defense = 65.0

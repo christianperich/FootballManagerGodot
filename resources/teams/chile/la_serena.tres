@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://dt10a14apfles"]
 
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_842xl"]
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_vjacd"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_vjacd"]
 
 [resource]
 script = ExtResource("2_vjacd")
 name = "Deportes La Serena"
 short_name = "La Serena"
+abreviation = "SER"
 attack = 65.0
 midfield = 60.0
 defense = 60.0

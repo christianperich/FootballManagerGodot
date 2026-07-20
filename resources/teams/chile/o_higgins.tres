@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://cqgpt84wk3c2p"]
 
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_b4c4f"]
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_h5hya"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_h5hya"]
 
 [resource]
 script = ExtResource("2_h5hya")
 name = "O'Higgins"
 short_name = "O'Higgins"
+abreviation = "OHI"
 attack = 63.0
 midfield = 69.0
 defense = 68.0

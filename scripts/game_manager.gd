@@ -29,7 +29,7 @@ func play_current_matchday():
 
 	var simulator := MatchSimulator.new()
 
-	for game in matchday.matches:
+	for game : MatchData in matchday.matches:
 		var result = simulator.simulate(
 			game.home_team,
 			game.away_team
@@ -39,17 +39,11 @@ func play_current_matchday():
 		game.home_goals = result.home_goals
 		game.away_goals = result.away_goals
 		game.played = true
+		game.result = result
+		game.matchday = current_season.current_matchday
 
-		print(
-			game.home_team.name,
-			" ",
-			result.home_goals,
-			"-",
-			result.away_goals,
-			" ",
-			game.away_team.name
-		)
-		print("--------------------")
+		#Imprimir el resultado
+		print_result(game)		
 		
 		current_season.league_table.update(game)
 	
@@ -61,4 +55,27 @@ func create_players(competition : CompetitionData):
 		print("Creando los jugadores de " + team.name)
 		print("----------------------")
 		generator.generate_squad(team)
+
+func print_result(game : MatchData):
+	print("%s %s - %s %s" % [
+			game.home_team.name, 
+			game.home_goals, 
+			game.away_goals, 
+			game.away_team.name
+			])
+			
+	print("--------------------")
 	
+	#Imprimir los eventos del partido
+	var events = game.result.events
+	#print("Numero de eventos: %s" % events.size())
+	#print("Matchday: %s" % game.matchday)
+	for event in events:
+		if event.type == 2:
+			var player = game.home_team.players.pick_random()
+			print("%s' %s %s (%s)" % [
+				event.minute, 
+				player.first_name,
+				player.last_name,				
+				event.attacking_team.abreviation])
+	print("--------------------")

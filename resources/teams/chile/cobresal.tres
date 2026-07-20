@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://c0cp06u27p5ea"]
 
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_n5y5m"]
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_p56jx"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_n5y5m"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("2_n5y5m")
 name = "Cobresal"
 short_name = "Cobresal"
+abreviation = "COB"
 attack = 55.0
 midfield = 62.0
 defense = 66.0

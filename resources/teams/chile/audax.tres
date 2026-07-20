@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://c6k8f07rpsu4v"]
 
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_nj4fx"]
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_qd0st"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_qd0st"]
 
 [resource]
 script = ExtResource("2_qd0st")
 name = "Audax Italiano"
 short_name = "Audax"
+abreviation = "AUD"
 attack = 66.0
 midfield = 62.0
 defense = 66.0

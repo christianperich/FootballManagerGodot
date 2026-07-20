@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://dco2lm6cfkiwo"]
 
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_46ct5"]
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_qldlw"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_qldlw"]
 
 [resource]
 script = ExtResource("2_qldlw")
 name = "Deportes Limache"
 short_name = "Limache"
+abreviation = "LIM"
 attack = 68.0
 midfield = 62.0
 defense = 60.0

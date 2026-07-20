@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FormationData" format=3 uid="uid://dxfsup2lutncx"]
+
+[ext_resource type="Script" uid="uid://dt7djerkfqbkj" path="res://scripts/simulation/FormationData.gd" id="1_2cmlo"]
+
+[resource]
+script = ExtResource("1_2cmlo")
+name = "4-3-3"
+positions = Array[int]([0, 3, 2, 2, 1, 4, 5, 6, 8, 7, 9])
+metadata/_custom_type_script = "uid://dt7djerkfqbkj"

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://dpn5cdkhrf8i5"]
 
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_rqf3m"]
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_xer8q"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_rqf3m"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("2_rqf3m")
 name = "Deportes Concepción"
 short_name = "Concepción"
+abreviation = "CON"
 attack = 63.0
 midfield = 60.0
 defense = 60.0

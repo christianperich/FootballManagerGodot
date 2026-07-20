@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="TeamData" format=3 uid="uid://7geg76iw4ldk"]
 
 [ext_resource type="Script" uid="uid://dcsyj0n3tk02p" path="res://resources/players/PlayerData.gd" id="1_80q2h"]
+[ext_resource type="Resource" uid="uid://dxfsup2lutncx" path="res://resources/formations/4-3-3.tres" id="1_sxncu"]
 [ext_resource type="Script" uid="uid://dvrsns4lv80w4" path="res://resources/teams/TeamData.gd" id="2_sxncu"]
 
 [resource]
 script = ExtResource("2_sxncu")
 name = "Unión La Calera"
 short_name = "La Calera"
+abreviation = "CAL"
 attack = 61.0
 midfield = 61.0
 defense = 60.0
