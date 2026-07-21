@@ -3,4 +3,4 @@ extends Resource
 
 @export var name: String
 
-@export var positions: Array[PlayerData.Position] = []
+@export var slots: Array[FormationSlot] = []

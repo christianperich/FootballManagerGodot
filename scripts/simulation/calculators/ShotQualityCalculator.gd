@@ -3,12 +3,18 @@ extends RefCounted
 
 
 func calculate(shot: ShotEvent) -> float:
-
 	var attacker = shot.attacking_team
 	var defender = shot.defending_team
 	
-	var assist = shot.assist
+
 	var finisher = shot.shooter
+
+	var finishing_power = (
+		finisher.shooting * 0.6 +
+		finisher.get_rating_for_position(
+			finisher.primary_position
+		) * 0.4
+	)
 
 	var offensive_power = (
 		attacker.attack * 0.6 +
@@ -21,17 +27,20 @@ func calculate(shot: ShotEvent) -> float:
 
 
 	# Reducimos la calidad base
-	var quality = base * 0.35
+	var quality = (
+		base * 0.30 +
+		finishing_power / 100.0 * 0.20
+	)
 
 
 	# Variación natural
-	quality *= randf_range(0.5,1.5)
+	quality *= randf_range(0.5, 1.5)
 
 
 	shot.xg = clamp(
 		quality,
 		0.02,
-		0.55
+		0.30
 	)
 
 

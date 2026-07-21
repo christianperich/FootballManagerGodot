@@ -12,4 +12,5 @@ abreviation = "HUA"
 attack = 68.0
 midfield = 66.0
 defense = 65.0
+formation = ExtResource("1_r1tyg")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

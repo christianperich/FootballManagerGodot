@@ -12,4 +12,5 @@ abreviation = "PAL"
 attack = 66.0
 midfield = 66.0
 defense = 71.0
+formation = ExtResource("1_m4bgv")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

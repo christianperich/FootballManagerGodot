@@ -12,4 +12,5 @@ abreviation = "CC"
 attack = 75.0
 midfield = 72.0
 defense = 74.0
+formation = ExtResource("1_gs8lw")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

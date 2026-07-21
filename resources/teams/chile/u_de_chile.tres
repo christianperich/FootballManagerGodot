@@ -12,4 +12,5 @@ abreviation = "UCH"
 attack = 75.0
 midfield = 74.0
 defense = 71.0
+formation = ExtResource("1_htt2h")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

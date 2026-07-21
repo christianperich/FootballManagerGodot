@@ -2,13 +2,12 @@ class_name ShotResolver
 extends RefCounted
 
 func resolve(chance: ChanceEvent) -> ShotEvent:
-
 	var attack = chance.attacking_team.attack
 	var defense = chance.defending_team.defense
 
 	var probability = float(attack) / float(attack + defense)
 
-	probability *= 0.6
+	probability *= 0.45
 
 	if randf() > probability:
 		return null

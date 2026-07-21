@@ -1,16 +1,13 @@
 class_name TeamRatingCalculator
 extends RefCounted
 
-func calculate(team: LineupData) -> TeamRatings:
-	"""if team.players.size() == 0:
-			return calculate_from_team(team)"""
 
+func calculate(lineup: LineupData) -> TeamRatings:
 	var ratings := TeamRatings.new()
 
-	var players = team.starters
-	ratings.attack = calculate_attack(players)
-	ratings.midfield = calculate_midfield(players)
-	ratings.defense = calculate_defense(players)
+	ratings.attack = calculate_attack(lineup)
+	ratings.midfield = calculate_midfield(lineup)
+	ratings.defense = calculate_defense(lineup)
 
 	ratings.overall = (
 		ratings.attack +
@@ -20,66 +17,51 @@ func calculate(team: LineupData) -> TeamRatings:
 
 	return ratings
 
-func calculate_attack(players: Array[PlayerData]) -> float:
-	var total := 0.0
-	var count := 0
 
-	for player in players:
-		if player.primary_position == PlayerData.Position.ST or player.primary_position == PlayerData.Position.LW or player.primary_position == PlayerData.Position.RW:
-			total += player.get_rating_for_position(player.primary_position)
-			count += 1
+func calculate_attack(lineup: LineupData) -> float:
+	var slots = lineup.get_slots_by_positions([
+		PlayerData.Position.LW,
+		PlayerData.Position.RW,
+		PlayerData.Position.FW,
+		PlayerData.Position.ST
+	])
 
-	if count == 0:
+	return _average_rating(slots)
+
+
+func calculate_midfield(lineup: LineupData) -> float:
+	var slots = lineup.get_slots_by_positions([
+		PlayerData.Position.CDM,
+		PlayerData.Position.CM,
+		PlayerData.Position.CAM,
+		PlayerData.Position.LM,
+		PlayerData.Position.RM
+	])
+
+	return _average_rating(slots)
+
+
+func calculate_defense(lineup: LineupData) -> float:
+	var slots = lineup.get_slots_by_positions([
+		PlayerData.Position.GK,
+		PlayerData.Position.LB,
+		PlayerData.Position.SW,
+		PlayerData.Position.CB,
+		PlayerData.Position.RB
+	])
+
+	return _average_rating(slots)
+
+
+func _average_rating(slots: Array[LineupSlot]) -> float:
+	if slots.is_empty():
 		return 0
 
-	return total / count
-
-func calculate_midfield(players: Array[PlayerData]) -> float:
 	var total := 0.0
-	var count := 0
 
-	for player in players:
-		match player.primary_position:
-			PlayerData.Position.CDM, \
-			PlayerData.Position.CM, \
-			PlayerData.Position.CAM:
-				total += player.get_rating_for_position(player.primary_position)
-				count += 1
+	for slot: LineupSlot in slots:
+		total += slot.player.get_rating_for_position(
+			slot.formation_slot.position
+		)
 
-	if count == 0:
-		return 0
-
-	return total / count
-
-func calculate_defense(players: Array[PlayerData]) -> float:
-	var total := 0.0
-	var count := 0
-
-	for player in players:
-		match player.primary_position:
-			PlayerData.Position.GK, \
-			PlayerData.Position.CB, \
-			PlayerData.Position.LB, \
-			PlayerData.Position.RB:
-				total += player.get_rating_for_position(player.primary_position)
-				count += 1
-
-	if count == 0:
-		return 0
-
-	return total / count
-
-func calculate_from_team(team: TeamData) -> TeamRatings:
-	var ratings := TeamRatings.new()
-
-	ratings.attack = team.attack
-	ratings.midfield = team.midfield
-	ratings.defense = team.defense
-
-	ratings.overall = (
-		ratings.attack +
-		ratings.midfield +
-		ratings.defense
-	) / 3.0
-
-	return ratings
+	return total / slots.size()

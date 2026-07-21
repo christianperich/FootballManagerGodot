@@ -12,4 +12,5 @@ abreviation = "OHI"
 attack = 63.0
 midfield = 69.0
 defense = 68.0
+formation = ExtResource("1_h5hya")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

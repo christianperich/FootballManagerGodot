@@ -1,21 +1,37 @@
 class_name LineupGenerator
 extends RefCounted
 
+const _4_3_3 = preload("uid://dxfsup2lutncx")
 
 func generate(team: TeamData) -> LineupData:
-
 	var lineup := LineupData.new()
 
-	for position in team.default_formation.positions:
+	var used_players: Array[PlayerData] = []
 
+	for slot: FormationSlot in team.formation.slots:
 		var player := _best_player(
 			team.players,
-			position,
-			lineup.starters
+			slot.position,
+			used_players
 		)
 
-		if player:
-			lineup.starters.append(player)
+		if player == null:
+			push_warning(
+				"No se encontró jugador para %s en %s" % [
+					PlayerData.position_to_string(slot.position),
+					team.name
+				]
+			)
+			continue
+
+		used_players.append(player)
+
+		var lineup_slot := LineupSlot.new()
+
+		lineup_slot.player = player
+		lineup_slot.formation_slot = slot
+
+		lineup.slots.append(lineup_slot)
 
 	return lineup
 
@@ -23,24 +39,19 @@ func generate(team: TeamData) -> LineupData:
 func _best_player(
 	players: Array[PlayerData],
 	position: PlayerData.Position,
-	used_players: Array[PlayerData]
+	used: Array[PlayerData]
 ) -> PlayerData:
-
-	var best_player: PlayerData
+	var best: PlayerData
 	var best_rating := -1.0
 
 	for player in players:
-
-		if used_players.has(player):
+		if used.has(player):
 			continue
 
 		var rating = player.get_rating_for_position(position)
 
-		if rating <= 0:
-			continue
-
 		if rating > best_rating:
 			best_rating = rating
-			best_player = player
+			best = player
 
-	return best_player
+	return best

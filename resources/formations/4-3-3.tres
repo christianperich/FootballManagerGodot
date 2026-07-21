@@ -1,9 +1,64 @@
 [gd_resource type="Resource" script_class="FormationData" format=3 uid="uid://dxfsup2lutncx"]
 
 [ext_resource type="Script" uid="uid://dt7djerkfqbkj" path="res://scripts/simulation/FormationData.gd" id="1_2cmlo"]
+[ext_resource type="Script" uid="uid://d2t8hwcnopelw" path="res://scripts/simulation/FormationSlot.gd" id="2_23mqt"]
+
+[sub_resource type="Resource" id="Resource_23mqt"]
+script = ExtResource("2_23mqt")
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_e2ges"]
+script = ExtResource("2_23mqt")
+position = 1
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_itpso"]
+script = ExtResource("2_23mqt")
+position = 3
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_ujofj"]
+script = ExtResource("2_23mqt")
+position = 3
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_kdm6r"]
+script = ExtResource("2_23mqt")
+position = 4
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_3i7hf"]
+script = ExtResource("2_23mqt")
+position = 5
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_kornf"]
+script = ExtResource("2_23mqt")
+position = 6
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_b7vdw"]
+script = ExtResource("2_23mqt")
+position = 7
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_4xmat"]
+script = ExtResource("2_23mqt")
+position = 10
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_qviug"]
+script = ExtResource("2_23mqt")
+position = 11
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
+
+[sub_resource type="Resource" id="Resource_eaqjo"]
+script = ExtResource("2_23mqt")
+position = 13
+metadata/_custom_type_script = "uid://d2t8hwcnopelw"
 
 [resource]
 script = ExtResource("1_2cmlo")
 name = "4-3-3"
-positions = Array[int]([0, 3, 2, 2, 1, 4, 5, 6, 8, 7, 9])
+slots = Array[ExtResource("2_23mqt")]([SubResource("Resource_23mqt"), SubResource("Resource_e2ges"), SubResource("Resource_itpso"), SubResource("Resource_ujofj"), SubResource("Resource_kdm6r"), SubResource("Resource_3i7hf"), SubResource("Resource_kornf"), SubResource("Resource_b7vdw"), SubResource("Resource_4xmat"), SubResource("Resource_qviug"), SubResource("Resource_eaqjo")])
 metadata/_custom_type_script = "uid://dt7djerkfqbkj"

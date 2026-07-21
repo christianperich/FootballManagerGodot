@@ -12,4 +12,5 @@ abreviation = "COQ"
 attack = 65.0
 midfield = 65.0
 defense = 71.0
+formation = ExtResource("1_cno64")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

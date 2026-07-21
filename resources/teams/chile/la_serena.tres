@@ -12,4 +12,5 @@ abreviation = "SER"
 attack = 65.0
 midfield = 60.0
 defense = 60.0
+formation = ExtResource("1_vjacd")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

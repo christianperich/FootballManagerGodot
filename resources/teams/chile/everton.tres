@@ -12,4 +12,5 @@ abreviation = "EVE"
 attack = 62.0
 midfield = 62.0
 defense = 62.0
+formation = ExtResource("1_c05m0")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

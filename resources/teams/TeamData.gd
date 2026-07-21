@@ -14,5 +14,5 @@ const def_formation = preload("uid://dxfsup2lutncx")
 @export_range(0, 100) var defense: float = 50
 
 @export_category("Plantilla")
-@export var default_formation: FormationData = def_formation
+@export var formation: FormationData
 @export var players: Array[PlayerData]

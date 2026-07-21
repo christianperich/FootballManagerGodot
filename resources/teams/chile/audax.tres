@@ -12,4 +12,5 @@ abreviation = "AUD"
 attack = 66.0
 midfield = 62.0
 defense = 66.0
+formation = ExtResource("1_qd0st")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

@@ -12,4 +12,5 @@ abreviation = "CAL"
 attack = 61.0
 midfield = 61.0
 defense = 60.0
+formation = ExtResource("1_sxncu")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"

@@ -29,7 +29,7 @@ func play_current_matchday():
 
 	var simulator := MatchSimulator.new()
 
-	for game : MatchData in matchday.matches:
+	for game: MatchData in matchday.matches:
 		var result = simulator.simulate(
 			game.home_team,
 			game.away_team
@@ -43,24 +43,22 @@ func play_current_matchday():
 		game.matchday = current_season.current_matchday
 
 		#Imprimir el resultado
-		print_result(game)		
+		print_result(game)
 		
 		current_season.league_table.update(game)
 	
 	current_season.next_matchday()
 
-func create_players(competition : CompetitionData):
-	for team:TeamData in competition.teams:
+func create_players(competition: CompetitionData):
+	for team: TeamData in competition.teams:
 		var generator = PlayersGenerator.new()
-		print("Creando los jugadores de " + team.name)
-		print("----------------------")
 		generator.generate_squad(team)
 
-func print_result(game : MatchData):
+func print_result(game: MatchData):
 	print("%s %s - %s %s" % [
-			game.home_team.name, 
-			game.home_goals, 
-			game.away_goals, 
+			game.home_team.name,
+			game.home_goals,
+			game.away_goals,
 			game.away_team.name
 			])
 			
@@ -70,15 +68,18 @@ func print_result(game : MatchData):
 	var events = game.result.events
 	#print("Numero de eventos: %s" % events.size())
 	#print("Matchday: %s" % game.matchday)
-	for event : MatchEvent in events:
-		if event.type == 2: #goal
+	for event: MatchEvent in events:
+		if event.type == 2: # goal
 			var player = event.scorer
 			var creator = event.assist
-			print("%s' %s %s (%s) - A: %s %s" % [
-				event.minute, 
+			print("%s' %s %s (%s) (%s) - A: %s %s (%s)" % [
+				event.minute,
 				player.first_name,
-				player.last_name,				
+				player.last_name,
+				player.position_to_string(player.primary_position),
 				event.attacking_team.abreviation,
 				creator.first_name,
-				creator.last_name])
+				creator.last_name,
+				creator.position_to_string(creator.primary_position)
+			])
 	print("--------------------")

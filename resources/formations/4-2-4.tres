@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="FormationData" format=3 uid="uid://d02yceiwjwx5w"]
-
-[ext_resource type="Script" uid="uid://dt7djerkfqbkj" path="res://scripts/simulation/FormationData.gd" id="1_tftiv"]
-
-[resource]
-script = ExtResource("1_tftiv")
-name = "4-2-4"
-positions = Array[int]([0, 3, 2, 2, 1, 4, 5, 8, 7, 9, 9])
-metadata/_custom_type_script = "uid://dt7djerkfqbkj"

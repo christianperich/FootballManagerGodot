@@ -12,4 +12,5 @@ abreviation = "ÑUB"
 attack = 60.0
 midfield = 60.0
 defense = 63.0
+formation = ExtResource("1_m5to5")
 metadata/_custom_type_script = "uid://dvrsns4lv80w4"
