@@ -27,18 +27,120 @@ func generate_player(position: PlayerData.Position, strenght: int, team:TeamData
 	player.last_name = get_last_name()
 	player.primary_position = position
 	player.age = randi_range(17, 35)
-	player.pace = strenght + randi_range(-10, 10)
-	player.shooting = strenght + randi_range(-10, 10)
-	player.passing = strenght + randi_range(-10, 10)
-	player.dribbling = strenght + randi_range(-10, 10)
-	player.defending = strenght + randi_range(-10, 10)
-	player.physical = strenght + randi_range(-10, 10)
-	player.goalkeeping = strenght + randi_range(-10, 10)
+	generate_attributes(player, strenght)
 
-	#print_player(player)
+	#rint_player(player)
 
 	team.players.append(player)
 	
+func generate_attributes(player:PlayerData, strength:int):
+
+	match player.primary_position:
+
+		PlayerData.Position.GK:
+
+			player.goalkeeping = random_attribute(strength + 8)
+			player.passing      = random_attribute(strength - 5)
+			player.physical     = random_attribute(strength - 5)
+			player.pace         = random_attribute(30)
+			player.dribbling    = random_attribute(25)
+			player.shooting     = random_attribute(15)
+			player.defending    = random_attribute(20)
+
+
+		PlayerData.Position.CB:
+
+			player.defending    = random_attribute(strength + 8)
+			player.physical     = random_attribute(strength + 5)
+			player.passing      = random_attribute(strength - 5)
+			player.pace         = random_attribute(strength - 5)
+			player.dribbling    = random_attribute(strength - 15)
+			player.shooting     = random_attribute(25)
+			player.goalkeeping  = random_attribute(10)
+
+
+		PlayerData.Position.LB, PlayerData.Position.RB:
+
+			player.defending    = random_attribute(strength + 5)
+			player.pace         = random_attribute(strength + 5)
+			player.passing      = random_attribute(strength)
+			player.dribbling    = random_attribute(strength - 5)
+			player.physical     = random_attribute(strength)
+			player.shooting     = random_attribute(strength - 20)
+			player.goalkeeping  = random_attribute(10)
+
+
+		PlayerData.Position.CDM:
+
+			player.defending    = random_attribute(strength + 5)
+			player.passing      = random_attribute(strength + 5)
+			player.physical     = random_attribute(strength)
+			player.dribbling    = random_attribute(strength - 5)
+			player.pace         = random_attribute(strength - 5)
+			player.shooting     = random_attribute(strength - 15)
+			player.goalkeeping  = random_attribute(10)
+
+
+		PlayerData.Position.CM:
+
+			player.passing      = random_attribute(strength + 5)
+			player.dribbling    = random_attribute(strength)
+			player.physical     = random_attribute(strength)
+			player.pace         = random_attribute(strength)
+			player.defending    = random_attribute(strength - 5)
+			player.shooting     = random_attribute(strength - 5)
+			player.goalkeeping  = random_attribute(10)
+
+
+		PlayerData.Position.CAM:
+
+			player.passing      = random_attribute(strength + 8)
+			player.dribbling    = random_attribute(strength + 5)
+			player.shooting     = random_attribute(strength)
+			player.pace         = random_attribute(strength)
+			player.physical     = random_attribute(strength - 10)
+			player.defending    = random_attribute(strength - 20)
+			player.goalkeeping  = random_attribute(10)
+
+
+		PlayerData.Position.LM, PlayerData.Position.RM:
+
+			player.pace         = random_attribute(strength + 5)
+			player.dribbling    = random_attribute(strength + 5)
+			player.passing      = random_attribute(strength)
+			player.physical     = random_attribute(strength - 5)
+			player.shooting     = random_attribute(strength - 5)
+			player.defending    = random_attribute(strength - 10)
+			player.goalkeeping  = random_attribute(10)
+
+
+		PlayerData.Position.LW, PlayerData.Position.RW:
+
+			player.pace         = random_attribute(strength + 8)
+			player.dribbling    = random_attribute(strength + 5)
+			player.shooting     = random_attribute(strength)
+			player.passing      = random_attribute(strength - 5)
+			player.physical     = random_attribute(strength - 10)
+			player.defending    = random_attribute(strength - 25)
+			player.goalkeeping  = random_attribute(10)
+
+
+		PlayerData.Position.FW, PlayerData.Position.ST:
+
+			player.shooting     = random_attribute(strength + 8)
+			player.pace         = random_attribute(strength + 5)
+			player.physical     = random_attribute(strength + 3)
+			player.dribbling    = random_attribute(strength)
+			player.passing      = random_attribute(strength - 10)
+			player.defending    = random_attribute(strength - 25)
+			player.goalkeeping  = random_attribute(10)
+
+func random_attribute(base:int, variation:=5) -> int:
+	return clamp(
+		base + randi_range(-variation, variation),
+		1,
+		99
+	)
 
 func print_player(player : PlayerData):
 	print("------------------")

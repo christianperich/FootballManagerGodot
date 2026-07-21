@@ -4,13 +4,17 @@ extends Resource
 enum Position {
 	GK,
 	LB,
+	SW,
 	CB,
 	RB,
 	CDM,
 	CM,
 	CAM,
+	LM,
+	RM,
 	LW,
 	RW,
+	FW,
 	ST
 }
 
@@ -33,30 +37,14 @@ enum Foot {
 @export var preferred_foot := Foot.RIGHT
 
 @export_category("Atributos")
-
-@export_range(1, 100)
-var pace := 50
-
-@export_range(1, 100)
-var shooting := 50
-
-@export_range(1, 100)
-var passing := 50
-
-@export_range(1, 100)
-var dribbling := 50
-
-@export_range(1, 100)
-var defending := 50
-
-@export_range(1, 100)
-var physical := 50
-
-@export_range(1, 100)
-var goalkeeping := 50
-
-@export_range(1, 100)
-var potential := 70
+@export_range(1, 100) var pace := 50
+@export_range(1, 100) var shooting := 50
+@export_range(1, 100) var passing := 50
+@export_range(1, 100) var dribbling := 50
+@export_range(1, 100) var defending := 50
+@export_range(1, 100) var physical := 50
+@export_range(1, 100) var goalkeeping := 50
+@export_range(1, 100) var potential := 70
 #endregion
 
 func get_full_name() -> String:
@@ -75,66 +63,109 @@ func get_short_name() -> String:
 	else:
 		return "%s. %s" % [first_name.left(1), last_name]
 
-func get_rating_for_position(target_position: Position) -> float:
-	match target_position:
+func get_rating_for_position(position: Position) -> float:
+	match position:
 		Position.GK:
-			return goalkeeping
-
-		Position.CB:
-			return defending * 0.6 \
-				+ physical * 0.25 \
-				+ passing * 0.15
+			return (
+				goalkeeping * 0.75 +
+				passing * 0.10 +
+				physical * 0.10 +
+				pace * 0.05
+			)
 
 		Position.LB, Position.RB:
-			return defending * 0.45 \
-				+ pace * 0.25 \
-				+ passing * 0.20 \
-				+ physical * 0.10
+			return (
+				defending * 0.35 +
+				pace * 0.25 +
+				passing * 0.20 +
+				physical * 0.10 +
+				dribbling * 0.10
+			)
+
+		Position.SW:
+			return (
+				defending * 0.40 +
+				passing * 0.25 +
+				physical * 0.15 +
+				pace * 0.10 +
+				dribbling * 0.10
+			)
+
+		Position.CB:
+			return (
+				defending * 0.45 +
+				physical * 0.25 +
+				pace * 0.15 +
+				passing * 0.10 +
+				dribbling * 0.05
+			)
 
 		Position.CDM:
-			return defending * 0.40 \
-				+ passing * 0.35 \
-				+ physical * 0.25
+			return (
+				defending * 0.30 +
+				passing * 0.30 +
+				physical * 0.20 +
+				dribbling * 0.10 +
+				pace * 0.10
+			)
 
 		Position.CM:
-			return passing * 0.45 \
-				+ dribbling * 0.20 \
-				+ defending * 0.20 \
-				+ physical * 0.15
+			return (
+				passing * 0.35 +
+				dribbling * 0.20 +
+				physical * 0.15 +
+				pace * 0.15 +
+				defending * 0.10 +
+				shooting * 0.05
+			)
 
 		Position.CAM:
-			return passing * 0.40 \
-				+ dribbling * 0.30 \
-				+ shooting * 0.20 \
-				+ pace * 0.10
+			return (
+				passing * 0.35 +
+				dribbling * 0.30 +
+				shooting * 0.20 +
+				pace * 0.10 +
+				physical * 0.05
+			)
+
+		Position.LM, Position.RM:
+			return (
+				pace * 0.30 +
+				dribbling * 0.25 +
+				passing * 0.25 +
+				physical * 0.10 +
+				shooting * 0.05 +
+				defending * 0.05
+			)
 
 		Position.LW, Position.RW:
-			return pace * 0.30 \
-				+ dribbling * 0.30 \
-				+ shooting * 0.25 \
-				+ passing * 0.15
+			return (
+				dribbling * 0.35 +
+				pace * 0.30 +
+				shooting * 0.20 +
+				passing * 0.10 +
+				physical * 0.05
+			)
+
+		Position.FW:
+			return (
+				shooting * 0.30 +
+				dribbling * 0.25 +
+				passing * 0.20 +
+				pace * 0.15 +
+				physical * 0.10
+			)
 
 		Position.ST:
-			return shooting * 0.45 \
-				+ pace * 0.25 \
-				+ physical * 0.20 \
-				+ dribbling * 0.10
+			return (
+				shooting * 0.40 +
+				physical * 0.20 +
+				pace * 0.20 +
+				dribbling * 0.15 +
+				passing * 0.05
+			)
 
-		_:
-			push_error("Posición no soportada en PlayerData.get_rating_for_position()")
-			return 50.0
+	return 0
 
 static func position_to_string(position: Position) -> String:
-	match position:
-		Position.GK: return "GK"
-		Position.LB: return "LB"
-		Position.CB: return "CB"
-		Position.RB: return "RB"
-		Position.CDM: return "CDM"
-		Position.CM: return "CM"
-		Position.CAM: return "CAM"
-		Position.LW: return "LW"
-		Position.RW: return "RW"
-		Position.ST: return "ST"
-
-	return "Unknown"
+	return Position.keys()[position]

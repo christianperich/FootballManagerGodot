@@ -12,12 +12,13 @@ enum ChanceType {
 # Tipo de ocasión
 var chance_type: ChanceType = ChanceType.NORMAL
 
+var creator: PlayerData
+var finisher: PlayerData
+
 var danger: float = 0.0
 
 # Si la ocasión terminó en un remate, aquí se almacena
 var shot: ShotEvent = null
-
-
 
 func _init():
 	type = EventType.CHANCE

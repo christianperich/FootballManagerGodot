@@ -7,94 +7,121 @@ var shot_resolver := ShotResolver.new()
 var shot_quality_calculator := ShotQualityCalculator.new()
 var goal_resolver := GoalResolver.new()
 
+
 func simulate(home_team: TeamData, away_team: TeamData) -> MatchContext:
 
 	var context := MatchContext.new()
 	context.initialize(home_team, away_team)
 
 	for minute in range(1, 91):
-
 		context.minute = minute
-
 		simulate_minute(context)
 
 	return context
 
-func simulate_minute(context: MatchContext):
+func simulate_minute(context: MatchContext) -> void:
 
 	var attacking = possession_calculator.pick_attacking_team(context)
+	var defending = _get_defending_team(context, attacking)
 
-	var defending: TeamData
+	_register_attack(context, attacking)
 
-	if attacking == context.home_team:
-		defending = context.away_team
-		context.home_attacks += 1
-	else:
-		defending = context.home_team
-		context.away_attacks += 1
-
-	var chance = chance_generator.generate(
+	var chance = simulate_chance(
+		context,
 		attacking,
-		defending,
-		context.minute
+		defending
 	)
 
 	if chance == null:
 		return
 
-	context.events.append(chance)
-
-	if attacking == context.home_team:
-		context.home_chances += 1
-	else:
-		context.away_chances += 1
-	
-	
-
-	var shot = shot_resolver.resolve(chance)
+	var shot = simulate_shot(
+		context,
+		chance
+	)
 
 	if shot == null:
 		return
 
+	simulate_goal(
+		context,
+		shot
+	)
 
-	# Calculamos calidad
+func simulate_chance(
+	context: MatchContext,
+	attacking: TeamData,
+	defending: TeamData
+	) -> ChanceEvent:
+
+	var chance = chance_generator.generate(
+		context,
+		attacking,
+		defending
+	)
+
+	if chance == null:
+		return null
+
+	context.add_event(chance)
+	context.add_chance(attacking)
+	
+
+	return chance
+
+func simulate_shot(
+	context: MatchContext,
+	chance: ChanceEvent
+	) -> ShotEvent:
+
+	var shot = shot_resolver.resolve(chance)
+
+	if shot == null:
+		return null
+
 	shot_quality_calculator.calculate(shot)
+	
+	
+	context.add_event(shot)
+	context.add_shot(chance.attacking_team)
 
+	return shot
 
-	context.events.append(shot)
+func simulate_goal(
+	context: MatchContext,
+	shot: ShotEvent
+	) -> void:
 
+	if !goal_resolver.resolve(shot):
+		return
+
+	var goal := GoalEvent.new()
+
+	goal.minute = context.minute
+	goal.attacking_team = shot.attacking_team
+	goal.defending_team = shot.defending_team
+	goal.shot = shot
+
+	goal.scorer = shot.shooter
+	goal.assist = shot.assist
+	goal.goalkeeper = shot.goalkeeper
+
+	context.add_event(goal)
+	context.add_goal(shot.attacking_team)
+
+func _register_attack(
+	context: MatchContext,
+	attacking: TeamData
+	) -> void:
+
+	context.add_attack(attacking)
+
+func _get_defending_team(
+	context: MatchContext,
+	attacking: TeamData
+	) -> TeamData:
 
 	if attacking == context.home_team:
-		context.home_shots += 1
-	else:
-		context.away_shots += 1
+		return context.away_team
 
-
-	# Resolver gol
-
-	var goal = goal_resolver.resolve(shot)
-
-
-	if goal:
-
-		var goal_event = GoalEvent.new()
-
-		goal_event.minute = context.minute
-		goal_event.attacking_team = attacking
-		goal_event.defending_team = defending
-		goal_event.shot = shot
-
-
-		context.events.append(goal_event)	
-
-
-		if attacking == context.home_team:
-			context.home_goals += 1
-			"""var player : PlayerData = context.home_team.players.pick_random()
-			print("%s' Gol de %s %s para %s" % [str(context.minute), player.first_name,player.last_name, context.home_team.name])"""
-		
-		else:
-			context.away_goals += 1
-			"""var player : PlayerData = context.away_team.players.pick_random()
-			print("%s' Gol de %s %s para %s" % [str(context.minute), player.first_name,player.last_name, context.away_team.name])"""
-		
+	return context.home_team

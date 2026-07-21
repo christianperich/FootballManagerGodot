@@ -6,16 +6,16 @@ func calculate(shot: ShotEvent) -> float:
 
 	var attacker = shot.attacking_team
 	var defender = shot.defending_team
-
+	
+	var assist = shot.assist
+	var finisher = shot.shooter
 
 	var offensive_power = (
 		attacker.attack * 0.6 +
 		attacker.midfield * 0.4
 	)
 
-
 	var defensive_power = defender.defense
-
 
 	var base = float(offensive_power) / float(offensive_power + defensive_power)
 

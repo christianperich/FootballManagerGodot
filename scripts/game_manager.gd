@@ -70,12 +70,15 @@ func print_result(game : MatchData):
 	var events = game.result.events
 	#print("Numero de eventos: %s" % events.size())
 	#print("Matchday: %s" % game.matchday)
-	for event in events:
-		if event.type == 2:
-			var player = game.home_team.players.pick_random()
-			print("%s' %s %s (%s)" % [
+	for event : MatchEvent in events:
+		if event.type == 2: #goal
+			var player = event.scorer
+			var creator = event.assist
+			print("%s' %s %s (%s) - A: %s %s" % [
 				event.minute, 
 				player.first_name,
 				player.last_name,				
-				event.attacking_team.abreviation])
+				event.attacking_team.abreviation,
+				creator.first_name,
+				creator.last_name])
 	print("--------------------")

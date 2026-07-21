@@ -5,10 +5,11 @@ extends RefCounted
 func generate(team: TeamData) -> LineupData:
 
 	var lineup := LineupData.new()
+
 	for position in team.default_formation.positions:
 
-		var player = _best_player(
-			team,
+		var player := _best_player(
+			team.players,
 			position,
 			lineup.starters
 		)
@@ -17,60 +18,29 @@ func generate(team: TeamData) -> LineupData:
 			lineup.starters.append(player)
 
 	return lineup
-	
+
+
 func _best_player(
-	team:TeamData, 
-	position:PlayerData.Position, 
-	lineup:Array[PlayerData]
-	) -> PlayerData:
-
-	var best: PlayerData
-	var best_rating := -1.0
-	
-	var selectable_players:Array[PlayerData]
-	
-	
-	for player:PlayerData in team.players:
-		if player.primary_position == position:
-			selectable_players.append(player)
-			#print("Agregado %s %s en la posición %s" % [player.first_name, player.last_name, position])
-			return
-	
-	#Solo está seleccionando el primero. Tiene que ser por rating
-
-	return #best
-
-func _best_players(
 	players: Array[PlayerData],
-	positions: Array,
-	used: Array[PlayerData]
-	) -> Array[PlayerData]:
+	position: PlayerData.Position,
+	used_players: Array[PlayerData]
+) -> PlayerData:
 
-	var result: Array[PlayerData] = []
+	var best_player: PlayerData
+	var best_rating := -1.0
 
-	for position in positions:
+	for player in players:
 
-		var best: PlayerData
-		var best_rating := -1.0
+		if used_players.has(player):
+			continue
 
-		for player in players:
+		var rating = player.get_rating_for_position(position)
 
-			if used.has(player):
-				continue
+		if rating <= 0:
+			continue
 
-			if result.has(player):
-				continue
+		if rating > best_rating:
+			best_rating = rating
+			best_player = player
 
-			if player.primary_position != position:
-				continue
-
-			var rating = player.get_rating_for_position(position)
-
-			if rating > best_rating:
-				best_rating = rating
-				best = player
-
-		if best:
-			result.append(best)
-
-	return result
+	return best_player

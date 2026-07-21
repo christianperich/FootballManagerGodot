@@ -17,16 +17,11 @@ enum ShotResult {
 # 0.75 = mano a mano
 var xg: float = 0.0
 
-
 # Resultado final del disparo
 var result: ShotResult = ShotResult.OFF_TARGET
 
-
-# Datos adicionales del remate
-
 # ¿Fue al arco?
 var on_target: bool = false
-
 
 # Tipo de remate (por ahora básico)
 enum ShotType {
@@ -39,6 +34,9 @@ enum ShotType {
 
 var shot_type: ShotType = ShotType.OPEN_PLAY
 
+var shooter: PlayerData
+var assist: PlayerData
+var goalkeeper: PlayerData
 
 func _init():
 	type = EventType.SHOT
