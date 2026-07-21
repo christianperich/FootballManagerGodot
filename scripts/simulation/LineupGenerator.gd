@@ -1,10 +1,9 @@
 class_name LineupGenerator
 extends RefCounted
 
-const _4_3_3 = preload("uid://dxfsup2lutncx")
 
 func generate(team: TeamData) -> LineupData:
-	var lineup := LineupData.new()
+	var lineup : LineupData = LineupData.new()
 
 	var used_players: Array[PlayerData] = []
 
@@ -32,6 +31,13 @@ func generate(team: TeamData) -> LineupData:
 		lineup_slot.formation_slot = slot
 
 		lineup.slots.append(lineup_slot)
+
+		"""print("%s %s - %s - %s (Natural)" % [
+			player.first_name, 
+			player.last_name, 
+			PlayerData.position_to_string(lineup_slot.formation_slot.position),
+			PlayerData.position_to_string(player.primary_position)
+			])"""
 
 	return lineup
 

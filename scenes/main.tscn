@@ -36,6 +36,4 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
 text = "Continuar"
 
-[node name="Node" type="Node" parent="." unique_id=563643273]
-
 [connection signal="pressed" from="Panel/ContinueButton" to="." method="_on_continue_button_pressed"]

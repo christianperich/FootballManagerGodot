@@ -66,20 +66,34 @@ func print_result(game: MatchData):
 	
 	#Imprimir los eventos del partido
 	var events = game.result.events
-	#print("Numero de eventos: %s" % events.size())
-	#print("Matchday: %s" % game.matchday)
 	for event: MatchEvent in events:
+		
+
 		if event.type == 2: # goal
-			var player = event.scorer
-			var creator = event.assist
-			print("%s' %s %s (%s) (%s) - A: %s %s (%s)" % [
+			var lineup = game.result.get_lineup(event.attacking_team)
+
+			var scorer_slot = get_player_slot(lineup, event.scorer)
+			var assist_slot = get_player_slot(lineup, event.assist)
+
+			print("%s' (%s) %s %s (%s) - A: %s %s (%s)" % [
 				event.minute,
-				player.first_name,
-				player.last_name,
-				player.position_to_string(player.primary_position),
 				event.attacking_team.abreviation,
-				creator.first_name,
-				creator.last_name,
-				creator.position_to_string(creator.primary_position)
+				event.scorer.first_name,
+				event.scorer.last_name,
+				PlayerData.position_to_string(scorer_slot.formation_slot.position),				
+				event.assist.first_name,
+				event.assist.last_name,
+				PlayerData.position_to_string(assist_slot.formation_slot.position)
 			])
 	print("--------------------")
+
+func get_player_slot(
+	lineup: LineupData,
+	player: PlayerData
+	) -> LineupSlot:
+
+	for slot in lineup.slots:
+		if slot.player == player:
+			return slot
+
+	return null
