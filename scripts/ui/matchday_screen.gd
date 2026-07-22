@@ -3,7 +3,7 @@ extends Control
 @onready var league_table: LeagueTableUI = $HBoxContainer/LeagueTable
 
 @onready var match_list: ScrollContainer = $HBoxContainer/MatchList
-@onready var v_box_container: VBoxContainer = $HBoxContainer/MatchList/VBoxContainer
+@onready var v_box_container: VBoxContainer = $HBoxContainer/MatchList/MarginContainer/VBoxContainer
 const MATCH_ITEM = preload("uid://b438xdxc2k6m2")
 
 # Called when the node enters the scene tree for the first time.

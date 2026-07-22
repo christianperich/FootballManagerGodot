@@ -40,7 +40,7 @@ func calculate(shot: ShotEvent) -> float:
 	shot.xg = clamp(
 		quality,
 		0.02,
-		0.30
+		0.40
 	)
 
 

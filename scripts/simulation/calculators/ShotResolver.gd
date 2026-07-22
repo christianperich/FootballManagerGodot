@@ -7,7 +7,7 @@ func resolve(chance: ChanceEvent) -> ShotEvent:
 
 	var probability = float(attack) / float(attack + defense)
 
-	probability *= 0.45
+	probability *= 0.55
 
 	if randf() > probability:
 		return null

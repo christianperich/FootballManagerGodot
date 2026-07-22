@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://b438xdxc2k6m2"]
 
-[ext_resource type="Script" uid="uid://diqe63pmsawjl" path="res://scenes/ui/match_item.gd" id="1_jps6m"]
-[ext_resource type="Texture2D" uid="uid://d11b2x5iixamx" path="res://default_logo.png" id="1_po2em"]
+[ext_resource type="Script" uid="uid://diqe63pmsawjl" path="res://scripts/ui/match_item.gd" id="1_jps6m"]
+[ext_resource type="Texture2D" uid="uid://d11b2x5iixamx" path="res://assets/logos/default_logo.png" id="1_po2em"]
+[ext_resource type="PackedScene" uid="uid://cuuh6tk7r3o25" path="res://scenes/components/team_button.tscn" id="3_5qxy2"]
+[ext_resource type="PackedScene" uid="uid://3184ya4f37ir" path="res://scenes/components/score_button.tscn" id="4_a1bml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5qxy2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1bml"]
 
 [node name="MatchItem" type="PanelContainer" unique_id=2039063824]
-custom_minimum_size = Vector2(0, 54)
+custom_minimum_size = Vector2(0, 40)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -594.0
+offset_bottom = -608.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -36,32 +42,29 @@ texture = ExtResource("1_po2em")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HomeContainer" unique_id=119018959]
+[node name="TeamButton" parent="MarginContainer/HBoxContainer/HomeContainer" unique_id=358263063 instance=ExtResource("3_5qxy2")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Colo Colo"
-horizontal_alignment = 2
-vertical_alignment = 1
-clip_text = true
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5qxy2")
+alignment = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=1196027893]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer/CenterContainer" unique_id=932748980]
+[node name="ScoreButton" parent="MarginContainer/HBoxContainer/CenterContainer" unique_id=824340851 instance=ExtResource("4_a1bml")]
 layout_mode = 2
-text = "0 - 0"
 
 [node name="AwayContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1282158030]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/AwayContainer" unique_id=143462793]
+[node name="TeamButton2" parent="MarginContainer/HBoxContainer/AwayContainer" unique_id=1790702007 instance=ExtResource("3_5qxy2")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Universidad de Chile"
-vertical_alignment = 1
-clip_text = true
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a1bml")
+text = "Equipo 2"
+alignment = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/AwayContainer" unique_id=437974946]
 custom_minimum_size = Vector2(24, 24)

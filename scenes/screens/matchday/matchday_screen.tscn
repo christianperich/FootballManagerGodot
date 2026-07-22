@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://b438xdxc2k6m2" path="res://scenes/ui/match_item.tscn" id="1_ap8yt"]
 [ext_resource type="Script" uid="uid://dpv320cm1hxdq" path="res://scripts/ui/matchday_screen.gd" id="1_gbqt5"]
-[ext_resource type="Script" uid="uid://diqe63pmsawjl" path="res://scenes/ui/match_item.gd" id="3_2urjp"]
 [ext_resource type="Script" uid="uid://b0pj5ltl8luij" path="res://scripts/ui/league_table_ui.gd" id="3_gbqt5"]
 [ext_resource type="PackedScene" uid="uid://cvlgutktknexn" path="res://scenes/ui/league_table_row.tscn" id="4_gbqt5"]
 
@@ -76,28 +75,35 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MatchList" unique_id=386157077]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MatchList" unique_id=1809798452]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MatchList/MarginContainer" unique_id=386157077]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="MatchItem" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=2039063824 instance=ExtResource("1_ap8yt")]
-layout_mode = 2
-script = ExtResource("3_2urjp")
-
-[node name="MatchItem2" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1453011284 instance=ExtResource("1_ap8yt")]
+[node name="MatchItem" parent="HBoxContainer/MatchList/MarginContainer/VBoxContainer" unique_id=2039063824 instance=ExtResource("1_ap8yt")]
 layout_mode = 2
 
-[node name="MatchItem3" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=921035791 instance=ExtResource("1_ap8yt")]
+[node name="MatchItem2" parent="HBoxContainer/MatchList/MarginContainer/VBoxContainer" unique_id=1453011284 instance=ExtResource("1_ap8yt")]
 layout_mode = 2
 
-[node name="MatchItem4" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1962147676 instance=ExtResource("1_ap8yt")]
+[node name="MatchItem3" parent="HBoxContainer/MatchList/MarginContainer/VBoxContainer" unique_id=921035791 instance=ExtResource("1_ap8yt")]
 layout_mode = 2
 
-[node name="MatchItem5" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1700102182 instance=ExtResource("1_ap8yt")]
+[node name="MatchItem4" parent="HBoxContainer/MatchList/MarginContainer/VBoxContainer" unique_id=1962147676 instance=ExtResource("1_ap8yt")]
 layout_mode = 2
 
-[node name="MatchItem6" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1616612399 instance=ExtResource("1_ap8yt")]
+[node name="MatchItem5" parent="HBoxContainer/MatchList/MarginContainer/VBoxContainer" unique_id=1700102182 instance=ExtResource("1_ap8yt")]
+layout_mode = 2
+
+[node name="MatchItem6" parent="HBoxContainer/MatchList/MarginContainer/VBoxContainer" unique_id=1616612399 instance=ExtResource("1_ap8yt")]
 layout_mode = 2
 
 [node name="LeagueTable" type="Control" parent="HBoxContainer" unique_id=1678452311]
@@ -108,7 +114,7 @@ script = ExtResource("3_gbqt5")
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeagueTable" unique_id=1474411594]
 layout_mode = 0
 offset_right = 345.0
-offset_bottom = 335.0
+offset_bottom = 452.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -123,26 +129,31 @@ text = "STANDINGS"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Rows" type="VBoxContainer" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer" unique_id=1449505906]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer" unique_id=2057486959]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rows" type="VBoxContainer" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1449505906]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LeagueTableRow" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer/Rows" unique_id=762628647 instance=ExtResource("4_gbqt5")]
 layout_mode = 2
 
-[node name="LeagueTableRow" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=762628647 instance=ExtResource("4_gbqt5")]
+[node name="LeagueTableRow2" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer/Rows" unique_id=976705746 instance=ExtResource("4_gbqt5")]
 layout_mode = 2
 
-[node name="LeagueTableRow2" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=976705746 instance=ExtResource("4_gbqt5")]
+[node name="LeagueTableRow3" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer/Rows" unique_id=1473919104 instance=ExtResource("4_gbqt5")]
 layout_mode = 2
 
-[node name="LeagueTableRow3" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=1473919104 instance=ExtResource("4_gbqt5")]
+[node name="LeagueTableRow4" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer/Rows" unique_id=971132910 instance=ExtResource("4_gbqt5")]
 layout_mode = 2
 
-[node name="LeagueTableRow4" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=971132910 instance=ExtResource("4_gbqt5")]
+[node name="LeagueTableRow5" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer/Rows" unique_id=155849842 instance=ExtResource("4_gbqt5")]
 layout_mode = 2
 
-[node name="LeagueTableRow5" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=155849842 instance=ExtResource("4_gbqt5")]
+[node name="LeagueTableRow6" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer/Rows" unique_id=2025654744 instance=ExtResource("4_gbqt5")]
 layout_mode = 2
 
-[node name="LeagueTableRow6" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=2025654744 instance=ExtResource("4_gbqt5")]
-layout_mode = 2
-
-[node name="LeagueTableRow7" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=1862814190 instance=ExtResource("4_gbqt5")]
+[node name="LeagueTableRow7" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/ScrollContainer/Rows" unique_id=1862814190 instance=ExtResource("4_gbqt5")]
 layout_mode = 2

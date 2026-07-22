@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://decux0xqy6hio"]
 
-[ext_resource type="Script" uid="uid://ci3rxr2ljvpyo" path="res://scenes/tests/fixture_test.gd" id="1_kfhwr"]
+[ext_resource type="Script" uid="uid://bslwjyulokr3n" path="res://scenes/tests/SeasonSimulatorTest.gd" id="1_kfhwr"]
 
 [node name="TestMatch" type="Node" unique_id=2053111146]
 script = ExtResource("1_kfhwr")

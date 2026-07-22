@@ -4,7 +4,7 @@ extends Node
 var match_simulator := MatchSimulator.new()
 
 
-const TOTAL_SEASONS := 1000
+const TOTAL_SEASONS := 10
 
 
 var champions := {}

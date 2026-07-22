@@ -66,7 +66,6 @@ func simulate_chance(
 	context.add_event(chance)
 	context.add_chance(attacking)
 	
-
 	return chance
 
 func simulate_shot(
@@ -80,7 +79,6 @@ func simulate_shot(
 		return null
 
 	shot_quality_calculator.calculate(shot)
-	
 	
 	context.add_event(shot)
 	context.add_shot(chance.attacking_team)

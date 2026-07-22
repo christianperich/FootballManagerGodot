@@ -37,7 +37,7 @@ func generate(
 		)
 
 	var probability := offense / (offense + defense)
-	probability *= 0.75
+	probability *= 0.8
 
 	if randf() > probability:
 		return null

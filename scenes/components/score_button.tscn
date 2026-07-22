@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://3184ya4f37ir"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65bwd"]
+
+[node name="Button" type="Button" unique_id=824340851]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 71.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_65bwd")
+text = "0 - 0"

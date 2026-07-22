@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://d11b2x5iixamx" path="res://default_logo.png" id="2_ibewp"]
 
 [node name="LeagueTableRow" type="Control" unique_id=762628647]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 3
 anchor_right = 1.0
-anchor_bottom = 0.076000005
+anchor_bottom = 0.046000004
 offset_top = -0.5
-offset_bottom = 0.2519951
+offset_bottom = -10.308002
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -17,25 +17,39 @@ script = ExtResource("1_cw34l")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1946542164]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 284.0
+offset_bottom = 20.0
 
 [node name="PositionLabel" type="Label" parent="HBoxContainer" unique_id=1330258156]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-text = "1. "
+theme_override_font_sizes/font_size = 12
+text = "20."
+horizontal_alignment = 2
 
 [node name="Logo" type="TextureRect" parent="HBoxContainer" unique_id=1909221220]
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
 texture = ExtResource("2_ibewp")
 expand_mode = 4
 stretch_mode = 5
 
 [node name="TeamLabel" type="Label" parent="HBoxContainer" unique_id=1548386361]
-custom_minimum_size = Vector2(230, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "Universidad de Concepción"
 
-[node name="PointsLabel" type="Label" parent="HBoxContainer" unique_id=1901863761]
+[node name="GamesPlayedLabel" type="Label" parent="HBoxContainer" unique_id=1524126291]
+custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "75"
+horizontal_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="HBoxContainer" unique_id=1901863761]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "75"
+horizontal_alignment = 1

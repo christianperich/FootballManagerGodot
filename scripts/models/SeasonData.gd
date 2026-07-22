@@ -62,5 +62,5 @@ func print_current_matchday():
 
 func next_matchday():
 	current_matchday += 1
-	league_table.print_table()
+	#league_table.print_table()
 	#print_current_matchday()
