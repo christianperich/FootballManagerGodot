@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://mwgyfu7u4jk4"]
+
+[ext_resource type="PackedScene" uid="uid://b438xdxc2k6m2" path="res://scenes/ui/match_item.tscn" id="1_ap8yt"]
+[ext_resource type="Script" uid="uid://dpv320cm1hxdq" path="res://scripts/ui/matchday_screen.gd" id="1_gbqt5"]
+[ext_resource type="Script" uid="uid://diqe63pmsawjl" path="res://scenes/ui/match_item.gd" id="3_2urjp"]
+[ext_resource type="Script" uid="uid://b0pj5ltl8luij" path="res://scripts/ui/league_table_ui.gd" id="3_gbqt5"]
+[ext_resource type="PackedScene" uid="uid://cvlgutktknexn" path="res://scenes/ui/league_table_row.tscn" id="4_gbqt5"]
+
+[node name="MatchdayScreen" type="Control" unique_id=982382387]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gbqt5")
+
+[node name="Header" type="Control" parent="." unique_id=670459148]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = 0
+offset_right = 786.0
+offset_bottom = 60.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header" unique_id=976062922]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Header/HBoxContainer" unique_id=1345857356]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JornadaAnterior" type="Button" parent="Header/HBoxContainer" unique_id=1577222775]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Jornada -1"
+
+[node name="JornadaActual" type="Button" parent="Header/HBoxContainer" unique_id=14678592]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "JORNADA #"
+
+[node name="JornadaPosterior" type="Button" parent="Header/HBoxContainer" unique_id=1834673201]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Jornada +1"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Header/HBoxContainer" unique_id=173449757]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = ">"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=439477874]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MatchList" type="ScrollContainer" parent="HBoxContainer" unique_id=1990483840]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MatchList" unique_id=386157077]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MatchItem" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=2039063824 instance=ExtResource("1_ap8yt")]
+layout_mode = 2
+script = ExtResource("3_2urjp")
+
+[node name="MatchItem2" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1453011284 instance=ExtResource("1_ap8yt")]
+layout_mode = 2
+
+[node name="MatchItem3" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=921035791 instance=ExtResource("1_ap8yt")]
+layout_mode = 2
+
+[node name="MatchItem4" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1962147676 instance=ExtResource("1_ap8yt")]
+layout_mode = 2
+
+[node name="MatchItem5" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1700102182 instance=ExtResource("1_ap8yt")]
+layout_mode = 2
+
+[node name="MatchItem6" parent="HBoxContainer/MatchList/VBoxContainer" unique_id=1616612399 instance=ExtResource("1_ap8yt")]
+layout_mode = 2
+
+[node name="LeagueTable" type="Control" parent="HBoxContainer" unique_id=1678452311]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+script = ExtResource("3_gbqt5")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/LeagueTable" unique_id=1474411594]
+layout_mode = 0
+offset_right = 345.0
+offset_bottom = 335.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeagueTable/MarginContainer" unique_id=1156703480]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer" unique_id=1663952690]
+layout_mode = 2
+text = "STANDINGS"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Rows" type="VBoxContainer" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer" unique_id=1449505906]
+layout_mode = 2
+
+[node name="LeagueTableRow" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=762628647 instance=ExtResource("4_gbqt5")]
+layout_mode = 2
+
+[node name="LeagueTableRow2" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=976705746 instance=ExtResource("4_gbqt5")]
+layout_mode = 2
+
+[node name="LeagueTableRow3" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=1473919104 instance=ExtResource("4_gbqt5")]
+layout_mode = 2
+
+[node name="LeagueTableRow4" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=971132910 instance=ExtResource("4_gbqt5")]
+layout_mode = 2
+
+[node name="LeagueTableRow5" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=155849842 instance=ExtResource("4_gbqt5")]
+layout_mode = 2
+
+[node name="LeagueTableRow6" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=2025654744 instance=ExtResource("4_gbqt5")]
+layout_mode = 2
+
+[node name="LeagueTableRow7" parent="HBoxContainer/LeagueTable/MarginContainer/VBoxContainer/Rows" unique_id=1862814190 instance=ExtResource("4_gbqt5")]
+layout_mode = 2

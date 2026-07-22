@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cbl2imok1w0ak"]
+
+[ext_resource type="Texture2D" uid="uid://d11b2x5iixamx" path="res://default_logo.png" id="1_jya5e"]
+
+[node name="LeagueStandingsSmall" type="Control" unique_id=1377437141]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 3
+anchor_right = 0.28100002
+anchor_bottom = 0.035
+offset_right = 0.28796387
+offset_bottom = 0.3199997
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1049906608]
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 20.0
+
+[node name="Pos" type="RichTextLabel" parent="HBoxContainer" unique_id=962857317]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "P"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1308364176]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_jya5e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Team" type="RichTextLabel" parent="HBoxContainer" unique_id=409796624]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "UNIVERSIDAD DE CHILE"
+vertical_alignment = 1
+
+[node name="Ptos" type="RichTextLabel" parent="HBoxContainer" unique_id=1264983264]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "PTS."
+vertical_alignment = 1
+
+[node name="DG" type="RichTextLabel" parent="HBoxContainer" unique_id=1729474661]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "DG"
+vertical_alignment = 1

@@ -47,8 +47,7 @@ func play_current_matchday():
 		
 		current_season.league_table.update(game)
 	
-	current_season.next_matchday()
-
+	
 func create_players(competition: CompetitionData):
 	for team: TeamData in competition.teams:
 		var generator = PlayersGenerator.new()
@@ -67,8 +66,6 @@ func print_result(game: MatchData):
 	#Imprimir los eventos del partido
 	var events = game.result.events
 	for event: MatchEvent in events:
-		
-
 		if event.type == 2: # goal
 			var lineup = game.result.get_lineup(event.attacking_team)
 
@@ -80,7 +77,7 @@ func print_result(game: MatchData):
 				event.attacking_team.abreviation,
 				event.scorer.first_name,
 				event.scorer.last_name,
-				PlayerData.position_to_string(scorer_slot.formation_slot.position),				
+				PlayerData.position_to_string(scorer_slot.formation_slot.position),
 				event.assist.first_name,
 				event.assist.last_name,
 				PlayerData.position_to_string(assist_slot.formation_slot.position)
@@ -91,7 +88,6 @@ func get_player_slot(
 	lineup: LineupData,
 	player: PlayerData
 	) -> LineupSlot:
-
 	for slot in lineup.slots:
 		if slot.player == player:
 			return slot
